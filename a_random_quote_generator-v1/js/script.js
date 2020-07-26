@@ -10,48 +10,45 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-var html = '';
-var quotes = [
-  {Quote:'You educate a man; you educate a man. You educate a woman; you educate a generation.', 
-    Source: 'Brigham Young'},
-  {Quote: 'A woman without a man is like a fish without a bicycle.', 
-    Source:'Irena Dunn'},
+let randomQuote;
+let randomNum;
+const quotes = [
+  {Quote: 'You educate a man; you educate a man. You educate a woman; you educate a generation.', 
+    author: 'Brigham Young'},
+  {Quote:'A woman without a man is like a fish without a bicycle.', 
+    author: 'Irena Dunn',
+    Citation: 'January 1975'},
   {Quote: 'I know enough to know that no woman should ever marry a man who hated his mother.',
-    Source:'Martha Gellhorn', 
-        Citation: 'Selected Letters'},
-  {Quote: 'The thing women have yet to learn is nobody gives you power. You just take it.',  
-    Source:'Roseanne Barr'},
-  {Quote:'A feminist is anyone who recognizes the equality and full humanity of women and men.', 
-    Source:'Gloria Steinem'}
+    Author:'Martha Gellhorn', 
+         Citation:'Selected Letters'},
+  {Quote:'The thing women have yet to learn is nobody gives you power. You just take it.',  
+    Author: 'Roseanne Barr'},
+  {Quote: 'A feminist is anyone who recognizes the equality and full humanity of women and men.', 
+    Author: 'Gloria Steinem'}
 ];
 
 
 /***
  * `getRandomQuote` function
 ***/
-function getRandomQuote () {
-    var randomQuote, x, i;
-    for (i = quotes.length - 1; i > 0; i--) {
-        randomQuote = Math.floor(Math.random() * (quotes.length));
-        x = getRandomQuote[i];
-        getRandomQuote[i] = getRandomQuote[randomQuote];
-        getRandomQuote[getRandomQuote] = x;
-    }
-    return getRandomQuote;
+// function that randomly selects quotes 
+function getRandomQuote (Quote, Author) {
+  Quote = Math.ceil(Quote);
+  Author = math.floor(Author);
+  RandomNum = math.random() * quotes.length + 1;
+  RandomQuote = randomNum;
+  return Math.floor(math.random() * (quote - author + 1)) + Quote;
 }
 
+
+  
 
 /***
  * `printQuote` function
 ***/
 
-function printQuote () {
-  for (var i = 0; i < quotes.length; i++) {
-    html += '<div>' + i + '</div>';
-  }
-  document.getElementById('html').innerHTML = quotes[randomQuote];
-}
-console.log(quotes);
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
