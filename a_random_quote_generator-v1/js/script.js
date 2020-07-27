@@ -60,7 +60,7 @@ function printQuote () {
   }
   if (randomQuote.Year) {
     HTML += '<span>, </span>' + randomQuote.Year + '</p>';
-
+ }
   document.getElementById('quote-box').innerHTML = HTML;
 '</p>'
 }
