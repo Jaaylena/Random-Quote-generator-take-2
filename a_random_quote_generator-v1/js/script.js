@@ -24,7 +24,7 @@ let quotes = [
   {Quote: 'You educate a man; you educate a man. You educate a woman; you educate a generation.', 
     Source: 'Brigham Young'},
   {Quote:'A woman without a man is like a fish without a bicycle.', 
-    Source: 'Irena Dunn', Citation: 'January 1975'},
+    Source: 'Irena Dunn', Year: 'January 1975'},
   {Quote: 'I know enough to know that no woman should ever marry a man who hated his mother.',
     Source:'Martha Gellhorn', Citation:'Selected Letters'},
   {Quote:'The thing women have yet to learn is nobody gives you power. You just take it.',  
@@ -49,7 +49,6 @@ randQuoteGen = getRandomQuote(quotes);
 /***
  * `printQuote` function
 ***/
-// print function that changes the random quotes in the quote-box
 function printQuote () { 
   getRandomQuote();
   HTML = '';
@@ -59,10 +58,12 @@ function printQuote () {
   if (randomQuote.Citation) {
     HTML += '<span>, </span>' + randomQuote.Citation + '</p>';
   }
+  if (randomQuote.Year) {
+    HTML += '<span>, </span>' + randomQuote.Year + '</p>';
 
   document.getElementById('quote-box').innerHTML = HTML;
 '</p>'
-};
+}
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
