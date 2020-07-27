@@ -16,43 +16,57 @@ let randQuoteGen;
 let quoteIndex;
 let message;
 let prntquote;  
+let quoteSource;
+let HTML;
+
 // and array of quotes and their authors 
 let quotes = [
   {Quote: 'You educate a man; you educate a man. You educate a woman; you educate a generation.', 
-    Author: 'Brigham Young'},
+    Source: 'Brigham Young'},
   {Quote:'A woman without a man is like a fish without a bicycle.', 
-    Author: 'Irena Dunn',
+    Source: 'Irena Dunn',
     Citation: 'January 1975'},
   {Quote: 'I know enough to know that no woman should ever marry a man who hated his mother.',
-    Author:'Martha Gellhorn', 
+    Source:'Martha Gellhorn', 
          Citation:'Selected Letters'},
   {Quote:'The thing women have yet to learn is nobody gives you power. You just take it.',  
-    Author: 'Roseanne Barr'},
+    Source: 'Roseanne Barr'},
   {Quote: 'A feminist is anyone who recognizes the equality and full humanity of women and men.', 
-    Author: 'Gloria Steinem'}
+    Source: 'Gloria Steinem'}
 ];
 
 
 /***
  * `getRandomQuote` function
 ***/
-// function that randomly selects quotes 
+// function that randomly chooses a quote to display
+
 function getRandomQuote () {
   quoteIndex = Math.floor(Math.random() * quotes.length);
     randomQuote = quotes[quoteIndex];
     return randomQuote;
-  
 }
 randQuoteGen = getRandomQuote(quotes);
 
 /***
  * `printQuote` function
 ***/
-function printQuote () {
-  randQuoteGen = getRandomQuote(quotes);
-  message = "<p class = 'quote'> " + quotes.quote + "</p>" + "<p class='source'>" + quotes.source + "</p>";
-  prntQuote = document.querySelector('quotes').innerHTML = message;
-}
+function printQuote () { 
+  getRandomQuote();
+  HTML = '';
+  HTML += '<p class="quote">' + randomQuote.Quote + '</p>';
+  HTML += '<p class="source">' + randomQuote.Source + '</p>'
+  
+  if (randomQuote.Citation) {
+    HTML += '<p class="citation">' + randomQuote.Citation + '</p>'
+  }
+  if (randomQuote.Year) {
+    HTML += '<p class="Year">' + randomQuote.Year + '</p>'
+  }
+
+  document.getElementById('quote-box').innerHTML = HTML;
+
+};
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
