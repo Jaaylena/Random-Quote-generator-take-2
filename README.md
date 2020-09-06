@@ -1,1 +1,1 @@
-# Random-Quote-generator-take-2
+# Random-Quote-generator
